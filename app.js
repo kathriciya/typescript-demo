@@ -1,2 +1,5 @@
 "use strict";
-var a = 1;
+var revenue = 1000;
+var bonus = 500;
+var res = revenue + bonus;
+console.log(res);
