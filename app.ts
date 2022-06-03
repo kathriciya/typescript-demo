@@ -1,15 +1,19 @@
-function getFullName(firstname: string, surname: string): string {
-  return `${firstname}${surname}`;
+function getFullName(userEntity: {
+  firstname: string;
+  surname: string;
+}): string {
+  return `${userEntity.firstname} ${userEntity.surname}`;
 }
-const getFullNameArrow = (firstname: string, surname: string): string => {
-  return `${firstname}${surname}`;
+
+const user = {
+  firstname: 'Иван',
+  surname: 'Иванов',
+  city: 'Moscow',
+  age: 33,
+  scills: {
+    dev: true,
+    devops: true,
+  },
 };
 
-function сheckFullName(firstname, surname) {
-  if (typeof firstname !== 'string') {
-    throw new Error('!!!');
-  }
-  return `${firstname}${surname}`;
-}
-
-console.log(сheckFullName(true, false));
+console.log(getFullName(user));

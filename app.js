@@ -1,14 +1,11 @@
 "use strict";
-function getFullName(firstname, surname) {
-    return "" + firstname + surname;
+function getFullName(userEntity) {
+    return userEntity.firstname + " " + userEntity.surname;
 }
-var getFullNameArrow = function (firstname, surname) {
-    return "" + firstname + surname;
+var user = {
+    firstname: 'Иван',
+    surname: 'Иванов',
+    city: 'Moscow',
+    age: 33,
 };
-function getFullNameCheck(firstname, surname) {
-    if (typeof firstname !== 'string') {
-        throw new Error('!!!');
-    }
-    return "" + firstname + surname;
-}
-console.log(getFullNameCheck(true, false));
+console.log(getFullName(user));
